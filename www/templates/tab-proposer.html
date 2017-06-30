@@ -1,0 +1,30 @@
+<ion-view view-title="Proposer" ng-controller="ProposerCtrl">
+
+
+  <ion-modal-view>
+    <ion-header-bar>
+      <h1 class="title">Recherche</h1>
+
+    </ion-header-bar>
+    <ion-content>
+
+        <div class="list">
+          <label class="item item-input">
+            <span class="input-label">Ville Depart</span>
+            <input type="text" ng-model="formPost.villeDepart">
+          </label>
+          <label class="item item-input">
+            <span class="input-label">Ville Arrive</span>
+            <input type="text" ng-model="formPost.villeArrive">
+          </label>
+          <label class="item item-input">
+            <span class="input-label">Date</span>
+            <input type="date" ng-model="formPost.date">
+          </label>
+          <label class="item">
+            <button class="button button-block button-positive" ng-click="proposerTraj()" class="button button-block" >Proposer</button>
+          </label>
+        </div>
+    </ion-content>
+  </ion-modal-view>
+</ion-view>

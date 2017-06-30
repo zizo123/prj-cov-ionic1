@@ -1,0 +1,57 @@
+<ion-view view-title="Recherche" ng-controller="RechercheCtrl">
+
+    <ion-modal-view >
+      <ion-header-bar>
+        <h1 class="title">Recherche</h1>
+      </br></br></br>
+
+      </ion-header-bar>
+      <body>
+      <ion-content>
+
+          <div class="list" >
+            <label class="item item-input">
+              <span class="input-label">Ville Depart</span>
+              <input type="text"  placeholder="Location" location-suggestion location="location" ng-model="location.formatted_address">
+            </label>
+            <label class="item item-input">
+              <span class="input-label">Ville Arrive</span>
+              <input type="text"  ng-model="formData.villeArrive">
+            </label>
+            <label class="item item-input">
+              <span class="input-label">Date</span>
+              <input type="date"  ng-model="formData.date">
+            </label>
+            <label class="item">
+             <button class="button button-block button-energized" ng-click="goToTraj()" class="button button-block" >Rechercher</button>
+            </label>
+          </div>
+      </ion-content>
+      </body>
+      <script id="location.html" type="text/ng-template">
+        <ion-modal-view>
+          <ion-header-bar class="item-input-inset">
+            <label class="item-input-wrapper">
+              <i class="icon ion-ios7-search placeholder-icon"></i>
+              <input type="search" ng-model="search.query" placeholder="Search">
+            </label>
+          </ion-header-bar>
+          <ion-content>
+            <ion-list>
+              <ion-item ng-show="search.error">
+                {{search.error}}
+              </ion-item>
+              <ion-item ng-repeat="suggestion in search.suggestions" ng-click="choosePlace(suggestion)">
+                {{suggestion.description}}
+              </ion-item>
+            </ion-list>
+            <img src="https://developers.google.com/maps/documentation/places/images/powered-by-google-on-white.png" alt="" />
+          </ion-content>
+        </ion-modal-view>
+      </script>
+    </ion-modal-view>
+</ion-view>
+
+
+
+

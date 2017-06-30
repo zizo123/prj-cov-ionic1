@@ -1,0 +1,25 @@
+<ion-view view-title="confirmation" ng-controller="ConfirmerCtrl">
+
+  <ion-content>
+    <div class="list">
+      <label class="item item-input">
+        <span class="input-label">Prix par passager :</span>
+        <input type="text" ng-model="formConf.prix">
+      </label>
+      <label class="item item-input">
+        <span class="input-label">Nombre de places proposées :</span>
+        <input type="text" ng-model="formConf.nbPlaces">
+      </label>
+
+    <input type="checkbox" name="conditions" >J'accepte les Conditions Générales et la Politique de Confidentialité.</input>
+
+      <br>
+      <label class="item">
+        <button class="button button-block button-positive" ng-click="confirmation()" class="button button-block" > Confirmer l'Annonce</button>
+      </label>
+
+
+
+    </div>
+  </ion-content>
+</ion-view>

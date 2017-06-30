@@ -1,0 +1,27 @@
+
+<ion-view title="trajets" ng-controller="TrajetsCtrl">
+
+  <ion-content>
+
+    <!--//refrech the metadata
+    <ion-refresher pulling-text="pull to refrech ..." on-refresh="loadNewerTrajet()"> </ion-refresher>-->
+
+    //liste des trajets
+    <ion-list class="list">
+
+      <ion-item  href="#/trajet/{{tr.idAnnonce}}" class="item item-avatar-left item-icon-right" ng-repeat="tr in trajets.content">
+
+        <img ng-src="/img/ion.png">
+        {{tr.idAnnonce}}<br/>
+        {{tr.villeDepart}} -&#45;&#45;&ndash;&gt; {{tr.villeArrive}}
+          <i class="icon ion-arrow-right-b"></i>
+          <ion-option-button class="button-assertive icon-left ion-trash-b" ng-click="remove(idAnnonce)">Delete</ion-option-button>
+      </ion-item>
+    </ion-list>
+    //charge les donnes depuis la fin
+   <!-- <ion-infinite-scroll on-infinite="loadOlderTrajet()" distance="1%">
+
+    </ion-infinite-scroll>-->
+  </ion-content>
+</ion-view>
+
